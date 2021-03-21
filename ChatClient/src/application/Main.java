@@ -23,7 +23,7 @@ public class Main extends Application {
 	Socket socket;
 	TextArea textArea;
 	
-	// 클라이언트 프로그램 동작 메소드입니다.
+	// 프로그램 동작 
 	public void startClient(String IP, int port) {
 		Thread thread = new Thread() {
 			public void run() {
@@ -43,7 +43,7 @@ public class Main extends Application {
 		thread.start();
 	}
 	
-	// 클라이언트 프로그램 종료 메소드입니다
+	//프로그램 종료 
 	public void stopClient() {
 		try {
 			if(socket != null && !socket.isClosed()) {
@@ -54,7 +54,7 @@ public class Main extends Application {
 		}
 	}
 	
-	//서버로 부터 메세지를 전달받는 메소드
+	//서버로 부터 메세지를 전달
 	public void receive() {
 		while(true) {
 			try {
@@ -76,7 +76,7 @@ public class Main extends Application {
 			
 	}
 	
-	//서버로 메시지를 전송하는 메소드
+	//서버로 메시지를 전송
 	public void send(String message) {
 		Thread thread = new Thread() {
 			public void run() {
@@ -92,7 +92,7 @@ public class Main extends Application {
 		};
 		thread.start();
 	}
-	//실제 프로그램을 동작
+	//실행
 	@Override
 	public void start(Stage primaryStage) {
 		BorderPane root = new BorderPane();
